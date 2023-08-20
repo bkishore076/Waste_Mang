@@ -1,0 +1,474 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Users</title>
+	
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Taxi Cab Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!--// Meta tag Keywords -->
+	
+	<!-- css files -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"> <!-- Bootstrap-Core-CSS -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" /> <!-- Style-CSS --> 
+	<link rel="stylesheet" href="{% static 'css/fontawesome-all.css' %}"> <!-- Font-Awesome-Icons-CSS -->
+	<!-- //css files -->
+
+	<!-- web-fonts -->
+	<link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+	<!-- //web-fonts -->
+	<link rel="stylesheet" type="text/css" href="{% static 'datatable/jquery.dataTables.min.css' %}">
+	<script src="{% static 'datatable/jquery.min.js' %}" type="text/javascript"></script>
+	<script src="{% static 'datatable/jquery.dataTables.min.js' %}" type="text/javascript"></script>
+	<script src="{% static 'datatable/bootstable.min.js' %}" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".table").DataTable();
+		});
+	</script>
+
+
+
+<style>
+	.medusrtab {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  display: block;
+	max-height: 350px;
+	overflow: auto;
+}
+
+.medusrtab td, .medusrtab th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.medusrtab tr:nth-child(even){background-color: #f2f2f2;}
+
+.medusrtab tr:hover {background-color: #ddd;}
+
+.medusrtab th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
+.button-42 {
+background-color: initial;
+background-image: linear-gradient(-180deg, #FF7E31, #E62C03);
+border-radius: 6px;
+box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+color: #FFFFFF;
+cursor: pointer;
+display: inline-block;
+font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+height: 40px;
+line-height: 40px;
+outline: 0;
+overflow: hidden;
+padding: 0 10px;
+pointer-events: auto;
+position: relative;
+text-align: center;
+touch-action: manipulation;
+user-select: none;
+-webkit-user-select: none;
+vertical-align: top;
+white-space: nowrap;
+width: 80px;
+z-index: 9;
+border: 0;
+transition: box-shadow .2s;
+}
+
+#customers {
+font-family: Arial, Helvetica, sans-serif;
+border-collapse: collapse;
+width: 100%;
+}
+
+#customers td, #customers th {
+border: 1px solid #ddd;
+padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+padding-top: 12px;
+padding-bottom: 12px;
+text-align: left;
+background-color: rgb(27, 12, 95);
+color: white;
+}
+.button-43 {
+background-color: initial;
+background-image: linear-gradient(-180deg, #f80c0c, #db5739);
+border-radius: 6px;
+box-shadow: rgba(28, 28, 29, 0.1) 0 2px 4px;
+color: #FFFFFF;
+cursor: pointer;
+display: inline-block;
+font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+height: 40px;
+line-height: 40px;
+outline: 0;
+overflow: hidden;
+padding: 0 10px;
+pointer-events: auto;
+position: relative;
+text-align: center;
+touch-action: manipulation;
+user-select: none;
+-webkit-user-select: none;
+vertical-align: top;
+white-space: nowrap;
+width: 80px;
+z-index: 9;
+border: 0;
+transition: box-shadow .2s;
+}
+.button-43:hover {
+box-shadow: rgb(155, 92, 65) 0 3px 8px;
+}
+
+.button-42:hover {
+box-shadow: rgb(155, 92, 65) 0 3px 8px;
+}
+
+.button-44 {
+background-color: initial;
+background-image: linear-gradient(-180deg, #1bb835, #388d31);
+border-radius: 6px;
+box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+color: #FFFFFF;
+cursor: pointer;
+display: inline-block;
+font-family: Inter,-apple-system,system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+height: 40px;
+line-height: 40px;
+outline: 0;
+overflow: hidden;
+padding: 0 10px;
+pointer-events: auto;
+position: relative;
+text-align: center;
+touch-action: manipulation;
+user-select: none;
+-webkit-user-select: none;
+vertical-align: top;
+white-space: nowrap;
+width: 80px;
+z-index: 9;
+border: 0;
+transition: box-shadow .2s;
+}
+.button-44:hover {
+box-shadow: rgb(85, 57, 45) 0 3px 8px;
+}
+
+  </style>
+
+	<style type="text/css">
+		table.dataTable tbody tr {
+    color: black;
+}
+button {
+    text-transform: none;
+    display: inline-block;
+    background: none;
+    border: none;
+    border: 1px solid #777;
+  width:58%;
+    float: left;
+    outline: none;
+    padding: 13px 15px 13px 15px;
+    font-size: 15px;
+    color: white;
+    letter-spacing: 1px;
+    margin-bottom: 1.5em;
+    font-family: 'Raleway', sans-serif;
+        background-color: #2780a6;
+}
+th{
+	color: white;
+background-color: #2780a6;
+}
+	</style>
+</head>
+
+<body>
+
+<!--/banner-->
+<div class="top-bar_sub_w3layouts container-fluid">
+		<div class="row">
+			
+			<div class="col-md-4 col-sm-6 log-icons mt-2">
+				<p class="py-2">    </p>
+			</div>
+			
+			<div class="col-md-4 col-sm-6 logo">
+				<a class="navbar-brand" href="#">
+					<i class="fas fa-globe"></i>WMS</a>
+			</div>
+			
+		</div>
+	</div>
+	<header style="margin-bottom: 100px;">
+
+		<nav class="navbar navbar-expand-lg navbar-light bg-light top-header">
+			<button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent" style="background-color: black;padding: 10px;">
+				<ul class="navbar-nav mx-auto">
+					<li class="nav-item ">
+						<a class="nav-link ml-lg-0" href="{% url 'Volunteer_home' %}">Home
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="{% url 'Volunteer_view_request' %}">View Requests</a>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link" href="{% url 'Volunterr_accepted_requests' %}">Accepted requests
+						<span class="sr-only">(current)</span>
+					</a>
+				</li>
+			
+				
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'Volunteer_list_user_page' %}">Chat</a>
+				</li>
+			
+				
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'Home_page' %}">Logout</a>
+				</li>
+
+				
+			</ul>
+
+		</div>
+	</nav>
+</header>
+<!-- <div class="banner" id="home" style="height: 100px;" >
+	
+</div> -->
+<!-- //banner -->
+<section style="min-height: 500px;"><br><br>
+		   
+	           
+<h1>Waste Removal Requests</h1>
+
+<table id="customers">
+  <tr>
+    <th style='display: none;'>id</th>
+    <th style="width: 200px;"> Uploaded Image</th>
+    <th>Date</th>
+	<th> Uploaded User</th>
+    <th>Address</th>
+    <th>Description</th>
+	<th>Waste type</th>
+
+
+    <th>Accept</th>
+     
+
+  </tr>
+  {% for i in data%}
+  <tr>
+    <td style="display: none;">{{i.id}}</td>
+	<td style="width: 200px;">  <img src ="{% static 'Wastes/' %}{{i.Image_path}}" style="margin-top: 20px;" width="150px" height="150px" alt=" Picture"></td>
+    <td>{{i.Date}}</td>
+	<td>{{i.Uname}}</td>
+    <td>{{i.Address}}</td>
+    <td>{{i.Description}}</td>
+	<td>{{i.Waste_types}}</td>
+   
+
+    <td><button id='deletebtn' style='margin-left: 5px;' data-bs-toggle='modal'  data-bs-target='#exampleModal'  class='button-43'>Accept</button></td>
+
+  </tr>
+  {% endfor %}
+
+
+</table>
+</section><br><br><br>
+	
+<footer >
+	<!-- <div class="container-fluid pt-lg-5">
+		 -->
+		<!-- copyright -->
+		<div class="footer-cpy text-center pt-sm-5 mt-sm-5 mt-4 pt-3">
+			<div class="w3layouts-agile-copyrightbottom">
+				<p>© 2023 WMS. All Rights Reserved | 
+					<a href="http://w3layouts.com/"></a>
+				</p>
+
+			</div>
+		</div>
+		<!-- //copyright -->
+	<!-- </div> -->
+</footer>
+<!-- //footer -->
+	
+<!-- js-scripts -->		
+
+	<!-- js -->
+	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
+	<!-- //js -->
+	
+	<!-- carousel -->
+	<script src="js/owl.carousel.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('.owl-carousel').owlCarousel({
+				loop: true,
+				margin: 10,
+				responsiveClass: true,
+				responsive: {
+					0: {
+						items: 1,
+						nav: true
+					},
+					600: {
+						items: 1,
+						nav: false
+					},
+					900: {
+						items: 2,
+						nav: false
+					},
+					1000: {
+						items: 3,
+						nav: true,
+						loop: false,
+						margin: 20
+					}
+				}
+			})
+		})
+	</script>
+	<!-- //carousel -->
+
+	<!--slider-->
+	<script src="js/responsiveslides.min.js"></script>
+	<script>
+		$(function () {
+			// Slideshow 1
+			$("#slider1").responsiveSlides({
+				auto: true,
+				pager: true,
+				nav: true,
+				speed: 500,
+				namespace: "centered-btns"
+			});
+		});
+	</script>
+	<!--//slider-->
+
+	<!-- start-smoth-scrolling -->
+	<script src="{% static 'js/SmoothScroll.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+	</script>
+	<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+
+
+
+
+
+
+<script src="{% static  'jquery-2.1.4.min.js' %}"></script>
+<script>
+
+	$(document).ready(function (e) {
+					
+	 
+	
+	
+
+
+	$("#customers").on('click','#deletebtn',function(){
+		
+		// get the current row
+		var currentRow=$(this).closest("tr"); 
+	  
+		var userid=currentRow.find("td:eq(0)").text();
+		
+		if (confirm("Do you really want to accept this request ?") == true) {
+
+
+			$.ajax({url:"/Accept_wrequest/",
+			  data:{
+				"uid":userid,
+			
+	
+			  },
+		  success:function(da){
+					 
+
+			alert("Request accepted successfully!!")
+            window.location.href="{% url 'Volunteer_view_request' %}"
+				
+			  
+		  }
+		});
+
+
+
+} else {
+x = "You pressed Cancel!";
+}
+	
+
+
+	   
+	});
+
+
+	
+
+	
+				  });
+	  </script>
+
+
+
+</body>
+</html>

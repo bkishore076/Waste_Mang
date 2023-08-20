@@ -1,0 +1,35 @@
+ {% load static %}
+ <header class="header-area header-sticky">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="" class="logo">
+                        
+                      <h1>Doc<span style="color: red;">Bloc</span><em></em></h1>
+                      <!-- <img src="{% static 'images/cm_logo.png' %}" height="55" > -->
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li><a href="{% url 'show_home_admin' %}" class="active">Home</a></li>
+                        
+                        <li><a href="{% url 'show_request_admin' %}">Show Request</a></li>
+                        <li><a href="{% url 'display_view_users' %}">Users</a></li>
+                       
+                 
+                    </ul>   
+                    <div class="border-button">
+                      <a href="{% url 'logout' %}" class="sign-in-up"><i class="fa fa-user"></i> Logout</a>
+                    </div>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>

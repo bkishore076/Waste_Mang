@@ -1,0 +1,316 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+	.pass{
+	display: inline-block;
+    background: none;
+    border: none;
+    border: 1px solid #777;
+    width: 100%;
+    float: left;
+    outline: none;
+    padding: 13px 15px 13px 15px;
+    font-size: 15px;
+    color: #777;
+    letter-spacing: 1px;
+    margin-bottom: 1.5em;
+    font-family: 'Raleway', sans-serif;
+}
+	</style>
+<title>Login</title>
+	
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Taxi Cab Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+
+
+<script src="{% static  'jquery-2.1.4.min.js' %}"></script>
+	<script>
+		$(document).ready(function() {
+		$("#subid").click(function(){
+
+			utype=$('#elecid').val()
+			uname=$('#unameid').val()
+			pswrd=$('#pswid').val()
+			// alert(name+place+phone+email+psw1+psw2)
+			
+		   
+			 if(utype=="" || uname=="" || pswrd==""){
+				alert("Please Enter login details")
+			}
+			
+			
+			else{
+
+				// alert(typ+email+psw)
+				$.ajax({url:"/CheckLogin/",
+				data:{
+					"uname":uname,
+					"pswrd":pswrd,
+					"utype":utype,
+					
+	
+				},
+					success:function(da){
+		
+					
+						if(da.status=="Customer"){
+						 alert("Welcome Customer")
+						 window.location.href="{% url 'Customer_home' %}"
+					   
+					   }
+					   else if(da.status=="Volunteer"){
+						 alert("Welcome Volunteer")
+						 window.location.href="{% url 'Volunteer_home' %}"
+					   
+					   }
+					   
+					   else{
+						 alert("Invalid login details!!!")
+					   }
+	
+					  
+	
+				
+					}
+				});
+			}
+			
+		}); 
+	});
+	</script>
+	<!--// Meta tag Keywords -->
+	
+	<!-- Stylesheet -->
+	<link href="{% static 'css/wickedpicker.css' %}" rel="stylesheet" type='text/css' media="all" />
+	<link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}" />
+
+	<!-- css files -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}"> <!-- Bootstrap-Core-CSS -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" /> <!-- Style-CSS --> 
+	<link rel="stylesheet" href="{% static 'css/fontawesome-all.css' %}"> <!-- Font-Awesome-Icons-CSS -->
+	<!-- //css files -->
+
+	<!-- web-fonts -->
+	<link href="//fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext" rel="stylesheet">
+	<!-- //web-fonts -->
+	<style type="text/css">
+		input[type="password"]
+		{
+
+   width: 100%;
+    color: #a0a0a0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    border-radius: 0.25rem;
+    padding: 10px 10px;
+    outline: none;
+    background: rgba(255, 255, 255, 0);
+    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.27);
+    box-sizing: border-box;
+
+		}
+	</style>
+</head>
+
+<body>
+
+<!--/banner-->
+<div class="top-bar_sub_w3layouts container-fluid">
+		<div class="row">
+			
+			<div class="col-md-4 col-sm-6 log-icons mt-2">
+				<p class="py-2">    </p>
+			</div>
+			
+			<div class="col-md-4 col-sm-6 logo">
+				<a class="navbar-brand" href="#">
+					<i class="fas fa-globe"></i>WMS</a>
+			</div>
+			
+			
+		</div>
+	</div>
+	
+	
+	<!-- //banner -->
+
+<!-- Booking -->
+<section class="bookingform py-5">
+	<div class="container py-md-5 py-3">
+		<h3 class="heading  text-center">Sign In</h3><br>
+		<div class="row">
+			<div class="col-lg-6 book-appointment p-sm-5 py-5 px-4">
+				<h2>Sign In Here</h2>
+				<div class="book-agileinfo-form">
+
+					
+
+					<div class="col-md-6 agileits-btm-spc form-text2" >
+						<label>Who are you?</label>
+						<select class="form-control form-control-lg"  name="diss" id="elecid"  style="width: 400px;">
+							<option value="">Select User</option>
+							<option value="Customer">Customer</option>
+							<option value="Volunteer">Volunteer</option>
+						
+						  </select> 
+					</div>
+
+					<div class="col-md-6 agileits-btm-spc form-text2" >
+						<input type="text" id="unameid" name="username" placeholder="Username" required="" style="width: 400px;">
+					</div>
+					<div class="col-md-6 agileits-btm-spc form-text2" >
+						<input type="password" id="pswid" class="pass" name="password" placeholder="Password" required="" style="width: 400px;">
+					</div>
+						<br>
+						<center>
+							<input type="submit" value="Login" id="subid" style="margin-left: 100px;">
+						</center>
+						
+					
+			
+				</div>
+			</div>
+			<div class="col-lg-6 mt-md-5">
+				
+				<img src="{% static 'images/carbg1.jpg' %}" alt="" class="img-fluid" />
+			</div>
+		</div>
+	</div>
+</section>	
+<!-- //Booking -->
+	
+	
+<!--footer-->
+<footer >
+	<!-- <div class="container-fluid pt-lg-5">
+		 -->
+		<!-- copyright -->
+		<div class="footer-cpy text-center pt-sm-5 mt-sm-5 mt-4 pt-3">
+			<div class="w3layouts-agile-copyrightbottom">
+				<p>© 2023 WMS. All Rights Reserved | 
+					<a href="http://w3layouts.com/"></a>
+				</p>
+
+			</div>
+		</div>
+		<!-- //copyright -->
+	<!-- </div> -->
+</footer>
+<!-- //footer -->
+
+<!-- js-scripts -->		
+
+	<!-- js -->
+	<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script> <!-- Necessary-JavaScript-File-For-Bootstrap --> 
+	<!-- //js -->
+	
+	<!-- Time -->
+	<script type="text/javascript" src="{% static 'js/wickedpicker.js' %}"></script>
+	<script type="text/javascript">
+		$('.timepicker').wickedpicker({
+			twentyFour: false
+		});
+	</script>
+	<!--// Time -->
+	<!-- Calendar -->
+	<script src="{% static 'js/jquery-ui.js' %}"></script>
+	<script>
+		$(function () {
+			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+		});
+	</script>
+	<!-- //Calendar -->
+	
+	<!-- carousel -->
+	<script src="{% static 'js/owl.carousel.js' %}"></script>
+	<script>
+		$(document).ready(function () {
+			$('.owl-carousel').owlCarousel({
+				loop: true,
+				margin: 10,
+				responsiveClass: true,
+				responsive: {
+					0: {
+						items: 1,
+						nav: true
+					},
+					600: {
+						items: 1,
+						nav: false
+					},
+					900: {
+						items: 2,
+						nav: false
+					},
+					1000: {
+						items: 3,
+						nav: true,
+						loop: false,
+						margin: 20
+					}
+				}
+			})
+		})
+	</script>
+	<!-- //carousel -->
+
+	<!--slider-->
+	<script src="{% static 'js/responsiveslides.min.js' %}"></script>
+	<script>
+		$(function () {
+			// Slideshow 1
+			$("#slider1").responsiveSlides({
+				auto: true,
+				pager: true,
+				nav: true,
+				speed: 500,
+				namespace: "centered-btns"
+			});
+		});
+	</script>
+	<!--//slider-->
+	
+	<!-- start-smoth-scrolling -->
+	<script src="{% static 'js/SmoothScroll.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+	</script>
+	<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+	<!-- //here ends scrolling icon -->
+	<!-- start-smoth-scrolling -->
+	
+<!-- //js-scripts -->
+
+</body>
+</html>

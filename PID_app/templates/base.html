@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<style>
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css_leo/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome-free_leo/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css_leo/custom.css' %}">
+    <script src="{% static 'js_leo/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js_leo/popper.min.js' %}"></script>
+    <script src="{% static 'js_leo/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js_leo/script.js' %}"></script>
+
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/templatemo-snapx-photography.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+
+  <script src="{% static 'assets/js/isotope.min.js' %}"></script>
+  <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+  <script src="{% static 'assets/js/wow.js' %}"></script>
+  <script src="{% static 'assets/js/tabs.js' %}"></script>
+  <script src="{% static 'assets/js/popup.js' %}"></script>
+  <script src="{% static 'assets/js/custom.js' %}"></script>
+
+
+    {% block header %} {% endblock header %}
+    {% include 'user_header.html' %}
+
+</head>
+
+   
+<body >
+   
+
+    <div class="container h-100" style="margin-top: 90px;">
+
+        {% block content %}{% endblock content %}
+    </div>
+</body>
+<script>
+    $(function() {
+        $('div.dataTables_length select').addClass('bg-dark')
+    })
+</script>
+{% include 'admin_footer.html' %}
+{% block footer %}{% endblock footer %}
+
+</html>
